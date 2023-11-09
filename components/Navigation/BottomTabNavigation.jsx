@@ -1,12 +1,12 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import React from "react";
 import Profile from "../../Views/Profile";
 import Search from "../../Views/Search";
 import Home from "../../Views/Home";
+import {Ionicons} from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 import {COLORS} from "../../assets/constants";
-import { Ionicons } from '@expo/vector-icons';
+
 const screenOptions = {
     tabBarShowLabel: false,
     tabBarHideOnKeyboard: true,
@@ -36,28 +36,7 @@ const BottomTabNavigation = () => {
                             )
                         }}
             />
-            <Tab.Screen name="Search" component={Search}
-                        options={{
-                            tabBarIcon: ({focused}) => (
-                                <Ionicons
-                                    name="search-sharp"
-                                    size={24}
-                                    color={focused ? COLORS.primary : COLORS.gray2}
-                                />
-                            )
-                        }}
-            />
-            <Tab.Screen name="Profile" component={Profile}
-                        options={{
-                            tabBarIcon: ({focused}) => (
-                                <Ionicons
-                                    name={focused ? "person" : "person-outline"}
-                                    size={24}
-                                    color={focused ? COLORS.primary : COLORS.gray2}
-                                />
-                            )
-                        }}
-            />
+
         </Tab.Navigator>
 
     )
